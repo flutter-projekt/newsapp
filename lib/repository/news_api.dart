@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'dart:convert';
 import '/models/article_model.dart';
 import '/models/articles_list_model.dart';

@@ -1,8 +1,6 @@
-import 'dart:ui';
+// ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class ArticleDetailsScreen extends StatefulWidget {
@@ -36,7 +34,7 @@ class _ArticleDetailsScreenState extends State<ArticleDetailsScreen> {
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(0.0, 340.0, 0.0, 0.0),
-              child: Container(
+              child: SizedBox(
                 height: MediaQuery.of(context).size.height * 3,
                 width: MediaQuery.of(context).size.width,
                 child: Material(

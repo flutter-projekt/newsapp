@@ -3,7 +3,6 @@ import '/screens/general_screen.dart';
 import '/screens/health_screen.dart';
 import '/screens/science_screen.dart';
 import '/screens/technology_screen.dart';
-import '/screens/top_headlines_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -11,7 +10,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 5,
+      length: 4,
       child: Scaffold(
         appBar: AppBar(
           shadowColor: Colors.transparent,
@@ -37,7 +36,6 @@ class HomeScreen extends StatelessWidget {
               Tab(text: "Gesundheit"),
               Tab(text: "Technik"),
               Tab(text: "Wissenschaft"),
-              Tab(text: "Top-Schlagzeilen"),
             ],
           ),
         ),
@@ -47,7 +45,6 @@ class HomeScreen extends StatelessWidget {
             HealthScreen(),
             TechnologyScreen(),
             ScienceScreen(),
-            TopHeadlinesScreen(),
           ],
         ),
       ),

@@ -66,9 +66,9 @@ class _GeneralScreenState extends State<GeneralScreen> {
                       ),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 350.0, 0.0, 0),
-                        child: Container(
-                          height: 200.0,
-                          width: 750.0,
+                        child: SizedBox(
+                          height: 100.0,
+                          width: 300.0,
                           child: Material(
                             borderRadius: BorderRadius.circular(35.0),
                             elevation: 10.0,
@@ -79,6 +79,7 @@ class _GeneralScreenState extends State<GeneralScreen> {
                                       const EdgeInsets.fromLTRB(10, 20, 10, 20),
                                   child: Text(
                                     news[index].title,
+                                    maxLines: 3,
                                     style: const TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold,
