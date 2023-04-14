@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import '../screens/screens.dart';
+import '../screens/home_screen.dart';
+import '../screens/discover_screen.dart';
+import '../screens/profile_screen.dart';
 
-class Bottom extends StatelessWidget {
-  const Bottom({
+class BottomNavBar extends StatelessWidget {
+  const BottomNavBar({
     Key? key,
     required this.index,
   }) : super(key: key);
@@ -17,29 +19,29 @@ class Bottom extends StatelessWidget {
       unselectedItemColor: Colors.grey,
       items: [
         BottomNavigationBarItem(
-          icon: IconButton(
+            icon: IconButton(
               onPressed: () {
                 Navigator.pushNamed(context, HomeScreen.routeName);
               },
-              icon: const Icon(Icons.home)),
-          label: "Home",
-        ),
+              icon: const Icon(Icons.home),
+            ),
+            label: "Home"),
         BottomNavigationBarItem(
-          icon: IconButton(
+            icon: IconButton(
               onPressed: () {
                 Navigator.pushNamed(context, DiscoverScreen.routeName);
               },
-              icon: const Icon(Icons.search)),
-          label: "Suche", //TODO: create search function
-        ),
+              icon: const Icon(Icons.search),
+            ),
+            label: "Suche"),
         BottomNavigationBarItem(
-          icon: IconButton(
+            icon: IconButton(
               onPressed: () {
-                print("No profile screen yet");
+                Navigator.pushNamed(context, ProfileScreen.routeName);
               },
-              icon: const Icon(Icons.person)),
-          label: "Profil", //TODO: create profile section
-        )
+              icon: const Icon(Icons.person),
+            ),
+            label: "Profil"),
       ],
     );
   }
