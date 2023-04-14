@@ -99,7 +99,7 @@ class _ArticleDetailsScreenState extends State<ArticleDetailsScreen> {
                         clipBehavior: Clip.antiAlias,
                         margin: const EdgeInsets.all(16),
                         elevation: 20,
-                        color: Colors.blue,
+                        color: Colors.black,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(35)),
                         child: Stack(
@@ -108,7 +108,7 @@ class _ArticleDetailsScreenState extends State<ArticleDetailsScreen> {
                             InkWell(
                               child: ColorFiltered(
                                 colorFilter: ColorFilter.mode(
-                                    Colors.blue.withOpacity(0.3),
+                                    Colors.black.withOpacity(0.3),
                                     BlendMode.srcOver),
                                 child: Image.network(
                                   widget.urlToImage!,
