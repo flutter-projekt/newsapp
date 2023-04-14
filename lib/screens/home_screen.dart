@@ -17,13 +17,13 @@ class HomeScreen extends StatelessWidget {
         appBar: AppBar(
           shadowColor: Colors.transparent,
           automaticallyImplyLeading: false,
+          centerTitle: true,
           title: const Text(
-            "Entdecken",
-            textAlign: TextAlign.center,
+            "Nachrichten des Tages",
             style: TextStyle(
-              fontSize: 30,
+              fontSize: 20,
               fontWeight: FontWeight.bold,
-              color: Colors.blue,
+              color: Colors.black,
             ),
           ),
           backgroundColor: Colors.transparent,
