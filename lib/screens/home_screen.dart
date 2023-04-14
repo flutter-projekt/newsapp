@@ -3,10 +3,12 @@ import '/screens/general_screen.dart';
 import '/screens/health_screen.dart';
 import '/screens/science_screen.dart';
 import '/screens/technology_screen.dart';
+import '../widgets/bottom_navbar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
+  static const routeName = "/";
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -47,6 +49,7 @@ class HomeScreen extends StatelessWidget {
             ScienceScreen(),
           ],
         ),
+        bottomNavigationBar: const BottomNavBar(index: 0),
       ),
     );
   }
