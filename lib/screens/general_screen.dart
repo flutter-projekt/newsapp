@@ -19,7 +19,29 @@ class _GeneralScreenState extends State<GeneralScreen> {
   List<Icon> icons = [
   Icon(Icons.favorite)
 ];
-Color _iconColor = Colors.grey;
+  List<Color> col =[
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+  ];
+  
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<ArticleViewModel>>(
@@ -93,13 +115,13 @@ Color _iconColor = Colors.grey;
                                 IconButton(
                                   iconSize: 25,
                                   icon: Icon(Icons.favorite),
-                                  color: _iconColor,
+                                  color: col[index],
                                   onPressed: () {
                                   setState(() {
-                                    if(_iconColor == Colors.grey){
-                                      _iconColor = Colors.red;
+                                    if(col[index] == Colors.grey){
+                                      col[index] = Colors.red;
                                     }else{
-                                      _iconColor = Colors.grey;
+                                      col[index] = Colors.grey;
                                     }
                                   });
                                   })

@@ -6,6 +6,29 @@ import '../view_model/article_view_model.dart';
 import '../view_model/articles_view_model.dart';
 import 'article_details_screen.dart';
 
+List<Color> col =[
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+  ];
+
 class ScienceScreen extends StatefulWidget {
   const ScienceScreen({super.key});
 
@@ -67,7 +90,7 @@ class _ScienceScreenState extends State<ScienceScreen> {
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 350.0, 0.0, 0),
                         child: SizedBox(
-                          height: 100.0,
+                          height: 200.0,
                           width: 300.0,
                           child: Material(
                             borderRadius: BorderRadius.circular(35.0),
@@ -86,6 +109,19 @@ class _ScienceScreenState extends State<ScienceScreen> {
                                     ),
                                   ),
                                 ),
+                                IconButton(
+                                  iconSize: 25,
+                                  icon: Icon(Icons.favorite),
+                                  color: col[index],
+                                  onPressed: () {
+                                  setState(() {
+                                    if(col[index] == Colors.grey){
+                                      col[index] = Colors.red;
+                                    }else{
+                                      col[index] = Colors.grey;
+                                    }
+                                  });
+                                  })
                               ],
                             ),
                           ),
