@@ -6,28 +6,28 @@ import '../view_model/article_view_model.dart';
 import '../view_model/articles_view_model.dart';
 import 'article_details_screen.dart';
 
-List<Color> col =[
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-  ];
+List<Color> col = [
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+];
 
 class TechnologyScreen extends StatefulWidget {
   const TechnologyScreen({super.key});
@@ -110,18 +110,18 @@ class _TechnologyScreenState extends State<TechnologyScreen> {
                                   ),
                                 ),
                                 IconButton(
-                                  iconSize: 25,
-                                  icon: Icon(Icons.favorite),
-                                  color: col[index],
-                                  onPressed: () {
-                                  setState(() {
-                                    if(col[index] == Colors.grey){
-                                      col[index] = Colors.red;
-                                    }else{
-                                      col[index] = Colors.grey;
-                                    }
-                                  });
-                                  })
+                                    iconSize: 25,
+                                    icon: Icon(Icons.favorite),
+                                    color: col[index],
+                                    onPressed: () {
+                                      setState(() {
+                                        if (col[index] == Colors.grey) {
+                                          col[index] = Colors.red;
+                                        } else {
+                                          col[index] = Colors.grey;
+                                        }
+                                      });
+                                    })
                               ],
                             ),
                           ),

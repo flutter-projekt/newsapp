@@ -12,28 +12,30 @@ class HealthScreen extends StatefulWidget {
   @override
   State<HealthScreen> createState() => _HealthScreenState();
 }
-List<Color> col =[
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-    Colors.grey,
-  ];
+
+List<Color> col = [
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+];
+
 class _HealthScreenState extends State<HealthScreen> {
   var articlesListViewModel = ArticlesListViewModel(classRepository: NewsApi());
 
@@ -108,18 +110,18 @@ class _HealthScreenState extends State<HealthScreen> {
                                   ),
                                 ),
                                 IconButton(
-                                  iconSize: 25,
-                                  icon: Icon(Icons.favorite),
-                                  color: col[index],
-                                  onPressed: () {
-                                  setState(() {
-                                    if(col[index] == Colors.grey){
-                                      col[index] = Colors.red;
-                                    }else{
-                                      col[index] = Colors.grey;
-                                    }
-                                  });
-                                  })
+                                    iconSize: 25,
+                                    icon: Icon(Icons.favorite),
+                                    color: col[index],
+                                    onPressed: () {
+                                      setState(() {
+                                        if (col[index] == Colors.grey) {
+                                          col[index] = Colors.red;
+                                        } else {
+                                          col[index] = Colors.grey;
+                                        }
+                                      });
+                                    })
                               ],
                             ),
                           ),

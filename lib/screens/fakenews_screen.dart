@@ -9,11 +9,10 @@ class FakenewsScreen extends StatelessWidget {
 
   static const routeName = "/fakenews";
 
-  Future<void> sendFakeNews(headline,discription) async {
-
+  Future<void> sendFakeNews(headline, discription) async {
     final Email send_email = Email(
-      body: 'Begründung warum der Artikel gemeldet wurde: '+headline,
-      subject: 'Dieser Artikel  wurde als Fakenews gemeldet: '+headline,
+      body: 'Begründung warum der Artikel gemeldet wurde: ' + headline,
+      subject: 'Dieser Artikel wurde als Fake News gemeldet: ' + headline,
       recipients: ['newsappflutterdart@gmail.com'],
       cc: ['newsappflutterdart@gmail.com'],
       bcc: [],
@@ -21,17 +20,15 @@ class FakenewsScreen extends StatelessWidget {
       isHTML: false,
     );
 
-
     String platformResponse;
 
     try {
       await FlutterEmailSender.send(send_email);
-      platformResponse = 'success';
+      platformResponse = 'Success';
     } catch (error) {
       print(error);
       platformResponse = error.toString();
     }
-
   }
 
   @override
@@ -42,7 +39,7 @@ class FakenewsScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
         centerTitle: true,
         title: const Text(
-          'Report fakenews',
+          'Report Fake News',
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
@@ -53,55 +50,58 @@ class FakenewsScreen extends StatelessWidget {
         elevation: 0,
       ),
       body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 30.0),
-        child: Column(
-          children: [
-            Padding(padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-            child: TextFormField(
-              controller: headlineController,
-              decoration: InputDecoration(
-                labelText: 'Article heading',
-                hintText: 'Name the article title',
-                prefixIcon: Icon(Icons.newspaper_rounded),
-                border: OutlineInputBorder(),
-                filled: true,
-                contentPadding: EdgeInsets.symmetric(vertical: 8.0),
-              ),
-            ),
-            ),
-            Padding(padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-            child: TextFormField(
-              keyboardType: TextInputType.multiline,
-              controller: discriptionController,
-              maxLines: null,
-              minLines: 10,
-              decoration: InputDecoration(
-                labelText: 'Description',
-                hintText: 'Describe the incorrect information of the article',
-                prefixIcon: Icon(Icons.view_headline_rounded),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                  borderSide: BorderSide.none,
+          margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 30.0),
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                child: TextFormField(
+                  controller: headlineController,
+                  decoration: InputDecoration(
+                    labelText: 'Article heading',
+                    hintText: 'Name the article title',
+                    prefixIcon: Icon(Icons.newspaper_rounded),
+                    border: OutlineInputBorder(),
+                    filled: true,
+                    contentPadding: EdgeInsets.symmetric(vertical: 8.0),
+                  ),
                 ),
-                filled: true,
-                contentPadding: EdgeInsets.symmetric(vertical: 8.0),
               ),
-            )
-            ),
-            Padding(padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-            child:           ElevatedButton(
-              style: ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20)),
-              onPressed: () {
-                var headline = headlineController.text;
-                var discription = discriptionController.text;
-                sendFakeNews(headline,discription);
-              },
-              child: const Text('send'),
-            ),
-            )
-          ],
-        )
-      ),
+              Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                  child: TextFormField(
+                    keyboardType: TextInputType.multiline,
+                    controller: discriptionController,
+                    maxLines: null,
+                    minLines: 10,
+                    decoration: InputDecoration(
+                      labelText: 'Description',
+                      hintText:
+                          'Describe the incorrect information of the article',
+                      prefixIcon: Icon(Icons.view_headline_rounded),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                        borderSide: BorderSide.none,
+                      ),
+                      filled: true,
+                      contentPadding: EdgeInsets.symmetric(vertical: 8.0),
+                    ),
+                  )),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      textStyle: const TextStyle(fontSize: 20)),
+                  onPressed: () {
+                    var headline = headlineController.text;
+                    var discription = discriptionController.text;
+                    sendFakeNews(headline, discription);
+                  },
+                  child: const Text('Send'),
+                ),
+              )
+            ],
+          )),
       bottomNavigationBar: const BottomNavBar(index: 1),
     );
   }

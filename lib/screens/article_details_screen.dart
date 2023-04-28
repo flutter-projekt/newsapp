@@ -74,7 +74,6 @@ class _ArticleDetailsScreenState extends State<ArticleDetailsScreen> {
                         ),
                       ),
                       Container(
-                        
                         alignment: Alignment.bottomLeft,
                         padding: const EdgeInsets.only(left: 20, right: 20),
                         child: Text(
@@ -83,7 +82,6 @@ class _ArticleDetailsScreenState extends State<ArticleDetailsScreen> {
                             fontSize: 25,
                           ),
                         ),
-                        
                       ),
                       Container(
                         alignment: Alignment.bottomLeft,
@@ -138,18 +136,18 @@ class _ArticleDetailsScreenState extends State<ArticleDetailsScreen> {
               ),
             ),
             IconButton(
-                                  icon: Icon(Icons.favorite, color: _iconColor), //WIP
-                                  tooltip: 'Add to favorite',
-                                  onPressed: () {
-                                  setState(() {
-                                    if(_iconColor == Colors.grey){
-                                      _iconColor = Colors.red;
-                                    }else{
-                                      _iconColor = Colors.grey;
-                                    }
-                                  });
-                                  },
-                                ),
+              icon: Icon(Icons.favorite, color: _iconColor), //WIP
+              tooltip: 'Add to favorite',
+              onPressed: () {
+                setState(() {
+                  if (_iconColor == Colors.grey) {
+                    _iconColor = Colors.red;
+                  } else {
+                    _iconColor = Colors.grey;
+                  }
+                });
+              },
+            ),
           ],
         ),
       ),
