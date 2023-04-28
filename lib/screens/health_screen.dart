@@ -119,12 +119,24 @@ class _HealthScreenState extends State<HealthScreen> {
                                       setState(() {
                                         if (col[index] == Colors.grey) {
                                           col[index] = Colors.red;
-                                          if (FavList.favorites.contains(news[index].title) == false) {
-                                            FavList.favorites.add(news[index].title);
+                                          if (FavList.title.contains(news[index].title) == false) {
+                                            FavList.title.add(news[index].title);
+                                            FavList.description.add(news[index].description);
+                                            FavList.author.add(news[index].author);
+                                            FavList.publishedAt.add(news[index].publishedAt);
+                                            FavList.content.add(news[index].content);
+                                            FavList.urlToImage.add(news[index].urlToImage);
+                                            FavList.url.add(news[index].url);
                                           }
                                         } else {
                                           col[index] = Colors.grey;
-                                          FavList.favorites.add(news[index].title);
+                                          FavList.title.remove(news[index].title);
+                                          FavList.description.remove(news[index].description);
+                                          FavList.author.remove(news[index].author);
+                                          FavList.publishedAt.remove(news[index].publishedAt);
+                                          FavList.content.remove(news[index].content);
+                                          FavList.urlToImage.remove(news[index].urlToImage);
+                                          FavList.url.remove(news[index].url);
                                         }
                                       });
                                     })

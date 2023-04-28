@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../widgets/bottom_navbar.dart';
 
 import '../models/FavList.dart';
+import 'article_details_screen.dart';
 
 class FavoritesScreen extends StatelessWidget {
   const FavoritesScreen({Key? key}) : super(key: key);
@@ -25,23 +26,36 @@ class FavoritesScreen extends StatelessWidget {
         elevation: 0,
         actions: [],
       ),
-      body: Column(
-        children: [
-          ListView.builder(
+      body: ListView.builder(
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
-            itemCount: FavList.favorites.length,
+            padding: const EdgeInsets.all(8),
+            itemCount: FavList.title.length,
             prototypeItem: ListTile(
-              title: Text(FavList.favorites.first),
+              title: Text(FavList.title.first),
             ),
             itemBuilder: (context, index) {
               return ListTile(
-                title: Text(FavList.favorites[index]),
-          );
-  },
-)
-        ]
-      ),
+                onTap: (){
+                  Navigator.push(
+                      context,
+                    MaterialPageRoute(
+                      builder: (context) => ArticleDetailsScreen(
+                        title: FavList.title[index],
+                        author: FavList.author[index],
+                        publishedAt: FavList.publishedAt[index],
+                        description: FavList.description[index],
+                        content: FavList.content[index],
+                        urlToImage: FavList.urlToImage[index],
+                        url: FavList.url[index],       
+                      ),
+                    ),
+                  );
+                },
+                title: Text(FavList.title[index]),
+              );
+            },
+          ), 
       bottomNavigationBar: const BottomNavBar(index: 2),
     );
   }
