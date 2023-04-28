@@ -2,20 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
 import '../widgets/bottom_navbar.dart';
 
-class DiscoverScreen extends StatelessWidget {
-  DiscoverScreen({Key? key}) : super(key: key);
+class FakenewsScreen extends StatelessWidget {
+  FakenewsScreen({Key? key}) : super(key: key);
   final discriptionController = TextEditingController();
   final headlineController = TextEditingController();
 
-  static const routeName = "/discover";
+  static const routeName = "/fakenews";
 
   Future<void> sendFakeNews(headline,discription) async {
 
     final Email send_email = Email(
       body: 'Begründung warum der Artikel gemeldet wurde: '+headline,
       subject: 'Dieser Artikel  wurde als Fakenews gemeldet: '+headline,
-      recipients: ['newsappFlutterDart@gmail.com'],
-      cc: [],
+      recipients: ['newsappflutterdart@gmail.com'],
+      cc: ['newsappflutterdart@gmail.com'],
       bcc: [],
       attachmentPaths: [],
       isHTML: false,
@@ -42,7 +42,7 @@ class DiscoverScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
         centerTitle: true,
         title: const Text(
-          'Fakenews melden',
+          'Report fakenews',
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
@@ -60,8 +60,8 @@ class DiscoverScreen extends StatelessWidget {
             child: TextFormField(
               controller: headlineController,
               decoration: InputDecoration(
-                labelText: 'Artikelüberschift',
-                hintText: 'Nennen Sie die Artikelüberschrift',
+                labelText: 'Article heading',
+                hintText: 'Name the article title',
                 prefixIcon: Icon(Icons.newspaper_rounded),
                 border: OutlineInputBorder(),
                 filled: true,
@@ -76,8 +76,8 @@ class DiscoverScreen extends StatelessWidget {
               maxLines: null,
               minLines: 10,
               decoration: InputDecoration(
-                labelText: 'Beschreibung',
-                hintText: 'Beschreiben Sie die falschen Informationen des Artikels',
+                labelText: 'Description',
+                hintText: 'Describe the incorrect information of the article',
                 prefixIcon: Icon(Icons.view_headline_rounded),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10.0),
@@ -96,7 +96,7 @@ class DiscoverScreen extends StatelessWidget {
                 var discription = discriptionController.text;
                 sendFakeNews(headline,discription);
               },
-              child: const Text('Absenden'),
+              child: const Text('send'),
             ),
             )
           ],

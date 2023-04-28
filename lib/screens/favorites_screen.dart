@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import '../widgets/bottom_navbar.dart';
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+class FavoritesScreen extends StatelessWidget {
+  const FavoritesScreen({Key? key}) : super(key: key);
 
-  static const routeName = "/profile";
+  static const routeName = "/favorites";
   @override
   Widget build(BuildContext context) {
     return Scaffold(

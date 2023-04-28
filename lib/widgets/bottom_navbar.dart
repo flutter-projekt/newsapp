@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../screens/home_screen.dart';
-import '../screens/discover_screen.dart';
-import '../screens/profile_screen.dart';
+import '../screens/news_screen.dart';
+import '../screens/fakenews_screen.dart';
+import '../screens/favorites_screen.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({
@@ -29,19 +29,19 @@ class BottomNavBar extends StatelessWidget {
         BottomNavigationBarItem(
             icon: IconButton(
               onPressed: () {
-                Navigator.pushNamed(context, DiscoverScreen.routeName);
+                Navigator.pushNamed(context, FakenewsScreen.routeName);
               },
               icon: const Icon(Icons.cancel),
             ),
-            label: "Fakenews melden"),
+            label: "report fakenews"),
         BottomNavigationBarItem(
             icon: IconButton(
               onPressed: () {
-                Navigator.pushNamed(context, ProfileScreen.routeName);
+                Navigator.pushNamed(context, FavoritesScreen.routeName);
               },
-              icon: const Icon(Icons.person),
+              icon: const Icon(Icons.favorite),
             ),
-            label: "Profil"),
+            label: "favorites"),
       ],
     );
   }

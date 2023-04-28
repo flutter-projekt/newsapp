@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
           automaticallyImplyLeading: false,
           centerTitle: true,
           title: const Text(
-            "Nachrichten des Tages",
+            "news of the day",
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -34,10 +34,10 @@ class HomeScreen extends StatelessWidget {
                 color: const Color.fromARGB(255, 226, 223, 223)),
             isScrollable: true,
             tabs: const [
-              Tab(text: "Allgemein"),
-              Tab(text: "Gesundheit"),
-              Tab(text: "Technik"),
-              Tab(text: "Wissenschaft"),
+              Tab(text: "general"),
+              Tab(text: "health"),
+              Tab(text: "technology"),
+              Tab(text: "science"),
             ],
           ),
         ),
