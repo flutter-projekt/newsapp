@@ -15,7 +15,33 @@ class GeneralScreen extends StatefulWidget {
 
 class _GeneralScreenState extends State<GeneralScreen> {
   var articlesListViewModel = ArticlesListViewModel(classRepository: NewsApi());
-
+  int buttonOnPressed = -1;
+  List<Icon> icons = [
+  Icon(Icons.favorite)
+];
+  List<Color> col =[
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+  ];
+  
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<ArticleViewModel>>(
@@ -42,7 +68,7 @@ class _GeneralScreenState extends State<GeneralScreen> {
                           content: news[index]!.content,
                           urlToImage: news[index]!.urlToImage,
                           url: news[index]!.url,
-                        ),
+                        ),   
                       ),
                     );
                   }),
@@ -67,7 +93,7 @@ class _GeneralScreenState extends State<GeneralScreen> {
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 350.0, 0.0, 0),
                         child: SizedBox(
-                          height: 100.0,
+                          height: 200.0,
                           width: 300.0,
                           child: Material(
                             borderRadius: BorderRadius.circular(35.0),
@@ -76,7 +102,7 @@ class _GeneralScreenState extends State<GeneralScreen> {
                               children: [
                                 Padding(
                                   padding:
-                                      const EdgeInsets.fromLTRB(10, 20, 10, 20),
+                                      const EdgeInsets.fromLTRB(10, 20, 10, 20),       
                                   child: Text(
                                     news[index].title,
                                     maxLines: 3,
@@ -86,6 +112,19 @@ class _GeneralScreenState extends State<GeneralScreen> {
                                     ),
                                   ),
                                 ),
+                                IconButton(
+                                  iconSize: 25,
+                                  icon: Icon(Icons.favorite),
+                                  color: col[index],
+                                  onPressed: () {
+                                  setState(() {
+                                    if(col[index] == Colors.grey){
+                                      col[index] = Colors.red;
+                                    }else{
+                                      col[index] = Colors.grey;
+                                    }
+                                  });
+                                  })
                               ],
                             ),
                           ),

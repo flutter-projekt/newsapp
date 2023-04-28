@@ -12,7 +12,28 @@ class HealthScreen extends StatefulWidget {
   @override
   State<HealthScreen> createState() => _HealthScreenState();
 }
-
+List<Color> col =[
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+    Colors.grey,
+  ];
 class _HealthScreenState extends State<HealthScreen> {
   var articlesListViewModel = ArticlesListViewModel(classRepository: NewsApi());
 
@@ -67,7 +88,7 @@ class _HealthScreenState extends State<HealthScreen> {
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 350.0, 0.0, 0),
                         child: SizedBox(
-                          height: 100.0,
+                          height: 200.0,
                           width: 300.0,
                           child: Material(
                             borderRadius: BorderRadius.circular(35.0),
@@ -86,6 +107,19 @@ class _HealthScreenState extends State<HealthScreen> {
                                     ),
                                   ),
                                 ),
+                                IconButton(
+                                  iconSize: 25,
+                                  icon: Icon(Icons.favorite),
+                                  color: col[index],
+                                  onPressed: () {
+                                  setState(() {
+                                    if(col[index] == Colors.grey){
+                                      col[index] = Colors.red;
+                                    }else{
+                                      col[index] = Colors.grey;
+                                    }
+                                  });
+                                  })
                               ],
                             ),
                           ),
