@@ -29,13 +29,12 @@ class ArticleModel {
           : null,
       author: map['author'] != null
           ? map['author'] as String
-          : "Autor nicht verfügbar",
-      title: map['title'] != null
-          ? map['title'] as String
-          : "Titel nicht verfügbar",
+          : "Author not available",
+      title:
+          map['title'] != null ? map['title'] as String : "Title not available",
       description: map['description'] != null
           ? map['description'] as String
-          : "Beschreibung nicht verfügbar",
+          : "Description not available",
       url: map['url'] != null
           ? map['url'] as String
           : "https://www.heise.de/news/Online-Workshop-Plattformuebergreifende-mobile-Apps-mit-Flutter-entwickeln-8116193.html",
@@ -44,10 +43,10 @@ class ArticleModel {
           : "https://storage.googleapis.com/cms-storage-bucket/0dbfcc7a59cd1cf16282.png",
       publishedAt: map['publishedAt'] != null
           ? map['publishedAt'] as String
-          : "Veröffentlichung nicht verfügbar",
+          : "Publication not available",
       content: map['content'] != null
           ? map['content'] as String
-          : "Inhalt nicht verfügbar",
+          : "Content not available",
     );
   }
 }
