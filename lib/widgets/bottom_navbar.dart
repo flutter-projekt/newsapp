@@ -15,7 +15,7 @@ class BottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       currentIndex: index,
-      selectedItemColor: Colors.black,
+      selectedItemColor: Colors.blue,
       unselectedItemColor: Colors.grey,
       items: [
         BottomNavigationBarItem(
@@ -33,7 +33,7 @@ class BottomNavBar extends StatelessWidget {
               },
               icon: const Icon(Icons.cancel),
             ),
-            label: "report fakenews"),
+            label: "Report Fake News"),
         BottomNavigationBarItem(
             icon: IconButton(
               onPressed: () {
@@ -41,7 +41,7 @@ class BottomNavBar extends StatelessWidget {
               },
               icon: const Icon(Icons.favorite),
             ),
-            label: "favorites"),
+            label: "Favorites"),
       ],
     );
   }

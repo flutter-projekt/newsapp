@@ -89,7 +89,7 @@ class _ArticleDetailsScreenState extends State<ArticleDetailsScreen> {
                         child: Chip(
                           backgroundColor: Colors.grey.withOpacity(0.2),
                           label: Text(
-                            "Autor : ${widget.author!}",
+                            "Author : ${widget.author!}",
                             style: const TextStyle(
                               fontSize: 15,
                             ),
@@ -121,7 +121,7 @@ class _ArticleDetailsScreenState extends State<ArticleDetailsScreen> {
                               },
                             ),
                             const Text(
-                              "Quelle",
+                              "Source",
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
