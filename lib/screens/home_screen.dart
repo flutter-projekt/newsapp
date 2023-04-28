@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '/screens/general_screen.dart';
-import '/screens/health_screen.dart';
-import '/screens/science_screen.dart';
-import '/screens/technology_screen.dart';
+import '../screens/general_screen.dart';
+import '../screens/health_screen.dart';
+import '../screens/science_screen.dart';
+import '../screens/technology_screen.dart';
 import '../widgets/bottom_navbar.dart';
 
 class HomeScreen extends StatelessWidget {

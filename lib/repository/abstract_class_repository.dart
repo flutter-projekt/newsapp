@@ -1,4 +1,4 @@
-import '/models/article_model.dart';
+import '../models/article_model.dart';
 
 abstract class ClassRepository {
   Future<List<ArticleModel>> getAllNews();

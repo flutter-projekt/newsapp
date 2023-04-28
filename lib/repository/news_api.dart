@@ -1,9 +1,9 @@
 // ignore_for_file: avoid_print
 
 import 'dart:convert';
-import '/models/article_model.dart';
-import '/models/articles_list_model.dart';
-import '/repository/abstract_class_repository.dart';
+import '../models/article_model.dart';
+import '../models/articles_list_model.dart';
+import '../repository/abstract_class_repository.dart';
 import 'package:http/http.dart' as http;
 
 class NewsApi extends ClassRepository {

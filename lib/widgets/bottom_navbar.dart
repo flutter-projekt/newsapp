@@ -23,17 +23,17 @@ class BottomNavBar extends StatelessWidget {
               onPressed: () {
                 Navigator.pushNamed(context, HomeScreen.routeName);
               },
-              icon: const Icon(Icons.home),
+              icon: const Icon(Icons.newspaper_rounded),
             ),
-            label: "Home"),
+            label: "News"),
         BottomNavigationBarItem(
             icon: IconButton(
               onPressed: () {
                 Navigator.pushNamed(context, DiscoverScreen.routeName);
               },
-              icon: const Icon(Icons.search),
+              icon: const Icon(Icons.cancel),
             ),
-            label: "Suche"),
+            label: "Fakenews melden"),
         BottomNavigationBarItem(
             icon: IconButton(
               onPressed: () {
