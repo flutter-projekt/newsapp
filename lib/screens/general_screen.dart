@@ -6,6 +6,8 @@ import '../view_model/article_view_model.dart';
 import '../view_model/articles_view_model.dart';
 import 'article_details_screen.dart';
 
+import '../models/FavList.dart';
+
 class GeneralScreen extends StatefulWidget {
   const GeneralScreen({super.key});
 
@@ -13,11 +15,7 @@ class GeneralScreen extends StatefulWidget {
   State<GeneralScreen> createState() => _GeneralScreenState();
 }
 
-class _GeneralScreenState extends State<GeneralScreen> {
-  var articlesListViewModel = ArticlesListViewModel(classRepository: NewsApi());
-  int buttonOnPressed = -1;
-  List<Icon> icons = [Icon(Icons.favorite)];
-  List<Color> col = [
+List<Color> col = [
     Colors.grey,
     Colors.grey,
     Colors.grey,
@@ -39,6 +37,9 @@ class _GeneralScreenState extends State<GeneralScreen> {
     Colors.grey,
     Colors.grey,
   ];
+
+class _GeneralScreenState extends State<GeneralScreen> {
+  var articlesListViewModel = ArticlesListViewModel(classRepository: NewsApi());
 
   @override
   Widget build(BuildContext context) {
@@ -118,8 +119,12 @@ class _GeneralScreenState extends State<GeneralScreen> {
                                       setState(() {
                                         if (col[index] == Colors.grey) {
                                           col[index] = Colors.red;
+                                          if (FavList.favorites.contains(news[index].title) == false) {
+                                            FavList.favorites.add(news[index].title);
+                                          }
                                         } else {
                                           col[index] = Colors.grey;
+                                          FavList.favorites.add(news[index].title);
                                         }
                                       });
                                     })

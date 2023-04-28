@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import '../widgets/bottom_navbar.dart';
 
+import '../models/FavList.dart';
+
 class FavoritesScreen extends StatelessWidget {
   const FavoritesScreen({Key? key}) : super(key: key);
-
   static const routeName = "/favorites";
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,21 @@ class FavoritesScreen extends StatelessWidget {
         actions: [],
       ),
       body: Column(
-        children: [],
+        children: [
+          ListView.builder(
+            scrollDirection: Axis.vertical,
+            shrinkWrap: true,
+            itemCount: FavList.favorites.length,
+            prototypeItem: ListTile(
+              title: Text(FavList.favorites.first),
+            ),
+            itemBuilder: (context, index) {
+              return ListTile(
+                title: Text(FavList.favorites[index]),
+          );
+  },
+)
+        ]
       ),
       bottomNavigationBar: const BottomNavBar(index: 2),
     );

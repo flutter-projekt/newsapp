@@ -6,6 +6,8 @@ import '../view_model/article_view_model.dart';
 import '../view_model/articles_view_model.dart';
 import 'article_details_screen.dart';
 
+import '../models/FavList.dart';
+
 class HealthScreen extends StatefulWidget {
   const HealthScreen({super.key});
 
@@ -117,8 +119,12 @@ class _HealthScreenState extends State<HealthScreen> {
                                       setState(() {
                                         if (col[index] == Colors.grey) {
                                           col[index] = Colors.red;
+                                          if (FavList.favorites.contains(news[index].title) == false) {
+                                            FavList.favorites.add(news[index].title);
+                                          }
                                         } else {
                                           col[index] = Colors.grey;
+                                          FavList.favorites.add(news[index].title);
                                         }
                                       });
                                     })
