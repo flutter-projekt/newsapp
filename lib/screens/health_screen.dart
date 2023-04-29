@@ -59,7 +59,6 @@ class _HealthScreenState extends State<HealthScreen> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => ArticleDetailsScreen(
-                          //  sourceName: news[index]!.sourceName,
                           title: news[index]!.title,
                           author: news[index]!.author,
                           publishedAt: news[index]!.publishedAt,
@@ -119,23 +118,37 @@ class _HealthScreenState extends State<HealthScreen> {
                                       setState(() {
                                         if (col[index] == Colors.grey) {
                                           col[index] = Colors.red;
-                                          if (FavList.title.contains(news[index].title) == false) {
-                                            FavList.title.add(news[index].title);
-                                            FavList.description.add(news[index].description);
-                                            FavList.author.add(news[index].author);
-                                            FavList.publishedAt.add(news[index].publishedAt);
-                                            FavList.content.add(news[index].content);
-                                            FavList.urlToImage.add(news[index].urlToImage);
+                                          if (FavList.title.contains(
+                                                  news[index].title) ==
+                                              false) {
+                                            FavList.title
+                                                .add(news[index].title);
+                                            FavList.description
+                                                .add(news[index].description);
+                                            FavList.author
+                                                .add(news[index].author);
+                                            FavList.publishedAt
+                                                .add(news[index].publishedAt);
+                                            FavList.content
+                                                .add(news[index].content);
+                                            FavList.urlToImage
+                                                .add(news[index].urlToImage);
                                             FavList.url.add(news[index].url);
                                           }
                                         } else {
                                           col[index] = Colors.grey;
-                                          FavList.title.remove(news[index].title);
-                                          FavList.description.remove(news[index].description);
-                                          FavList.author.remove(news[index].author);
-                                          FavList.publishedAt.remove(news[index].publishedAt);
-                                          FavList.content.remove(news[index].content);
-                                          FavList.urlToImage.remove(news[index].urlToImage);
+                                          FavList.title
+                                              .remove(news[index].title);
+                                          FavList.description
+                                              .remove(news[index].description);
+                                          FavList.author
+                                              .remove(news[index].author);
+                                          FavList.publishedAt
+                                              .remove(news[index].publishedAt);
+                                          FavList.content
+                                              .remove(news[index].content);
+                                          FavList.urlToImage
+                                              .remove(news[index].urlToImage);
                                           FavList.url.remove(news[index].url);
                                         }
                                       });

@@ -27,35 +27,35 @@ class FavoritesScreen extends StatelessWidget {
         actions: [],
       ),
       body: ListView.builder(
-            scrollDirection: Axis.vertical,
-            shrinkWrap: true,
-            padding: const EdgeInsets.all(8),
-            itemCount: FavList.title.length,
-            prototypeItem: ListTile(
-              title: Text(FavList.title.first),
-            ),
-            itemBuilder: (context, index) {
-              return ListTile(
-                onTap: (){
-                  Navigator.push(
-                      context,
-                    MaterialPageRoute(
-                      builder: (context) => ArticleDetailsScreen(
-                        title: FavList.title[index],
-                        author: FavList.author[index],
-                        publishedAt: FavList.publishedAt[index],
-                        description: FavList.description[index],
-                        content: FavList.content[index],
-                        urlToImage: FavList.urlToImage[index],
-                        url: FavList.url[index],       
-                      ),
-                    ),
-                  );
-                },
-                title: Text(FavList.title[index]),
+        scrollDirection: Axis.vertical,
+        shrinkWrap: true,
+        padding: const EdgeInsets.all(8),
+        itemCount: FavList.title.length,
+        prototypeItem: ListTile(
+          title: Text(FavList.title.first),
+        ),
+        itemBuilder: (context, index) {
+          return ListTile(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ArticleDetailsScreen(
+                    title: FavList.title[index],
+                    author: FavList.author[index],
+                    publishedAt: FavList.publishedAt[index],
+                    description: FavList.description[index],
+                    content: FavList.content[index],
+                    urlToImage: FavList.urlToImage[index],
+                    url: FavList.url[index],
+                  ),
+                ),
               );
             },
-          ), 
+            title: Text(FavList.title[index]),
+          );
+        },
+      ),
       bottomNavigationBar: const BottomNavBar(index: 2),
     );
   }
