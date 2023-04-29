@@ -54,14 +54,28 @@ class _ArticleDetailsScreenState extends State<ArticleDetailsScreen> {
                           ),
                         ),
                       ),
-                      Chip(
-                        backgroundColor: Colors.grey.withOpacity(0.1),
-                        label: Text(
-                          widget.publishedAt!.substring(0, 10),
-                          style: const TextStyle(
-                            fontSize: 20.0,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Chip(
+                            backgroundColor: Colors.grey.withOpacity(0.1),
+                            label: Text(
+                              widget.publishedAt!.substring(0, 10),
+                              style: const TextStyle(
+                                fontSize: 15.0,
+                              ),
+                            ),
                           ),
-                        ),
+                          Chip(
+                            backgroundColor: Colors.grey.withOpacity(0.2),
+                            label: Text(
+                              widget.author!,
+                              style: const TextStyle(
+                                fontSize: 15,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                       Container(
                         alignment: Alignment.bottomLeft,
@@ -80,19 +94,6 @@ class _ArticleDetailsScreenState extends State<ArticleDetailsScreen> {
                           widget.content!,
                           style: const TextStyle(
                             fontSize: 25,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        alignment: Alignment.bottomLeft,
-                        padding: const EdgeInsets.only(left: 20, right: 20),
-                        child: Chip(
-                          backgroundColor: Colors.grey.withOpacity(0.2),
-                          label: Text(
-                            "Author : ${widget.author!}",
-                            style: const TextStyle(
-                              fontSize: 15,
-                            ),
                           ),
                         ),
                       ),
