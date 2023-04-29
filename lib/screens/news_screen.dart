@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
           bottom: TabBar(
             indicator: BoxDecoration(
                 borderRadius: BorderRadius.circular(35),
-                color: Color.fromARGB(255, 157, 200, 255)),
+                color: const Color.fromARGB(255, 157, 200, 255)),
             isScrollable: true,
             tabs: const [
               Tab(text: "General"),

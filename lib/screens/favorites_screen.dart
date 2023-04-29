@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../widgets/bottom_navbar.dart';
 
-import '../models/FavList.dart';
+import '../models/fav_list.dart';
 import 'article_details_screen.dart';
 
 class FavoritesScreen extends StatelessWidget {
@@ -24,7 +24,7 @@ class FavoritesScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
-        actions: [],
+        actions: const [],
       ),
       body: ListView.builder(
         scrollDirection: Axis.vertical,

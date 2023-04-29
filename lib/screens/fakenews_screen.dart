@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_interpolation_to_compose_strings, unused_local_variable, avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
 import '../widgets/bottom_navbar.dart';
@@ -10,7 +12,7 @@ class FakenewsScreen extends StatelessWidget {
   static const routeName = "/fakenews";
 
   Future<void> sendFakeNews(headline, discription) async {
-    final Email send_email = Email(
+    final Email sendEmail = Email(
       body: 'Begründung warum der Artikel gemeldet wurde: ' + headline,
       subject: 'Dieser Artikel wurde als Fake News gemeldet: ' + headline,
       recipients: ['newsappflutterdart@gmail.com'],
@@ -23,7 +25,7 @@ class FakenewsScreen extends StatelessWidget {
     String platformResponse;
 
     try {
-      await FlutterEmailSender.send(send_email);
+      await FlutterEmailSender.send(sendEmail);
       platformResponse = 'Success';
     } catch (error) {
       print(error);
@@ -50,14 +52,15 @@ class FakenewsScreen extends StatelessWidget {
         elevation: 0,
       ),
       body: Container(
-          margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 30.0),
+          margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 30.0),
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                 child: TextFormField(
                   controller: headlineController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Article heading',
                     hintText: 'Name the article title',
                     prefixIcon: Icon(Icons.newspaper_rounded),
@@ -68,7 +71,8 @@ class FakenewsScreen extends StatelessWidget {
                 ),
               ),
               Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                   child: TextFormField(
                     keyboardType: TextInputType.multiline,
                     controller: discriptionController,
@@ -78,17 +82,18 @@ class FakenewsScreen extends StatelessWidget {
                       labelText: 'Description',
                       hintText:
                           'Describe the incorrect information of the article',
-                      prefixIcon: Icon(Icons.view_headline_rounded),
+                      prefixIcon: const Icon(Icons.view_headline_rounded),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.0),
                         borderSide: BorderSide.none,
                       ),
                       filled: true,
-                      contentPadding: EdgeInsets.symmetric(vertical: 8.0),
+                      contentPadding: const EdgeInsets.symmetric(vertical: 8.0),
                     ),
                   )),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       textStyle: const TextStyle(fontSize: 20)),

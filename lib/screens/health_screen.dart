@@ -6,7 +6,7 @@ import '../view_model/article_view_model.dart';
 import '../view_model/articles_view_model.dart';
 import 'article_details_screen.dart';
 
-import '../models/FavList.dart';
+import '../models/fav_list.dart';
 
 class HealthScreen extends StatefulWidget {
   const HealthScreen({super.key});
@@ -112,7 +112,7 @@ class _HealthScreenState extends State<HealthScreen> {
                                 ),
                                 IconButton(
                                     iconSize: 25,
-                                    icon: Icon(Icons.favorite),
+                                    icon: const Icon(Icons.favorite),
                                     color: col[index],
                                     onPressed: () {
                                       setState(() {
