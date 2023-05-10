@@ -31,7 +31,8 @@ class BottomNavBar extends StatelessWidget {
             icon: IconButton(
               onPressed: () {
                 ScreenArguments arg = ScreenArguments('');
-                Navigator.pushNamed(context, FakenewsScreen.routeName,arguments: arg);
+                Navigator.pushNamed(context, FakenewsScreen.routeName,
+                    arguments: arg);
               },
               icon: const Icon(Icons.cancel),
             ),

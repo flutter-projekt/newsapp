@@ -1,5 +1,6 @@
+// ignore_for_file: prefer_interpolation_to_compose_strings, unused_local_variable, avoid_print
+
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
 import '../models/screen_arguments_model.dart';
 import '../widgets/bottom_navbar.dart';
@@ -10,7 +11,6 @@ class FakenewsScreen extends StatelessWidget {
   final headlineController = TextEditingController();
 
   static const routeName = "/fakenews";
-
 
   Future<void> sendFakeNews(headline, discription) async {
     final Email sendEmail = Email(
