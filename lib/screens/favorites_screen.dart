@@ -9,54 +9,78 @@ class FavoritesScreen extends StatelessWidget {
   static const routeName = "/favorites";
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        shadowColor: Colors.transparent,
-        automaticallyImplyLeading: false,
-        centerTitle: true,
-        title: const Text(
-          'Favorites',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
+    if(FavList.title.isNotEmpty) {
+      return Scaffold(
+        appBar: AppBar(
+          shadowColor: Colors.transparent,
+          automaticallyImplyLeading: false,
+          centerTitle: true,
+          title: const Text(
+            'Favorites',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
           ),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          actions: const [],
         ),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        actions: const [],
-      ),
-      body: ListView.builder(
-        scrollDirection: Axis.vertical,
-        shrinkWrap: true,
-        padding: const EdgeInsets.all(8),
-        itemCount: FavList.title.length,
-        prototypeItem: ListTile(
-          title: Text(FavList.title.first),
-        ),
-        itemBuilder: (context, index) {
-          return ListTile(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ArticleDetailsScreen(
-                    title: FavList.title[index],
-                    author: FavList.author[index],
-                    publishedAt: FavList.publishedAt[index],
-                    description: FavList.description[index],
-                    content: FavList.content[index],
-                    urlToImage: FavList.urlToImage[index],
-                    url: FavList.url[index],
+        body: ListView.builder(
+          scrollDirection: Axis.vertical,
+          shrinkWrap: true,
+          padding: const EdgeInsets.all(8),
+          itemCount: FavList.title.length,
+          prototypeItem: ListTile(
+            title: Text(FavList.title.first),
+          ),
+          itemBuilder: (context, index) {
+            return ListTile(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        ArticleDetailsScreen(
+                          title: FavList.title[index],
+                          author: FavList.author[index],
+                          publishedAt: FavList.publishedAt[index],
+                          description: FavList.description[index],
+                          content: FavList.content[index],
+                          urlToImage: FavList.urlToImage[index],
+                          url: FavList.url[index],
+                        ),
                   ),
-                ),
-              );
-            },
-            title: Text(FavList.title[index]),
-          );
-        },
-      ),
-      bottomNavigationBar: const BottomNavBar(index: 2),
-    );
+                );
+              },
+              title: Text(FavList.title[index]),
+            );
+          },
+        ),
+        bottomNavigationBar: const BottomNavBar(index: 2),
+      );
+    }
+    else{
+      return Scaffold(
+        appBar: AppBar(
+          shadowColor: Colors.transparent,
+          automaticallyImplyLeading: false,
+          centerTitle: true,
+          title: const Text(
+            'Favorites',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+          ),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          actions: const [],
+        ),
+        bottomNavigationBar: const BottomNavBar(index: 2),
+      );
+    }
   }
 }
