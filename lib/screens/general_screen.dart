@@ -115,56 +115,65 @@ class _GeneralScreenState extends State<GeneralScreen> {
                                 ),
                                 Row(
                                   children: [
-                                    IconButton(
+                                    Padding(
+                                      padding:
+                                      const EdgeInsets.fromLTRB(35, 20, 10, 20),
+                                      child: IconButton(
+                                          iconSize: 25,
+                                          icon: Icon(Icons.favorite),
+                                          color: col[index],
+                                          onPressed: () {
+                                            setState(() {
+                                              if(col[index] == Colors.grey){
+                                                col[index] = Colors.red;if (FavList.title.contains(
+                                                    news[index].title) ==
+                                                    false) {
+                                                  FavList.title
+                                                      .add(news[index].title);
+                                                  FavList.description
+                                                      .add(news[index].description);
+                                                  FavList.author
+                                                      .add(news[index].author);
+                                                  FavList.publishedAt
+                                                      .add(news[index].publishedAt);
+                                                  FavList.content
+                                                      .add(news[index].content);
+                                                  FavList.urlToImage
+                                                      .add(news[index].urlToImage);
+                                                  FavList.url.add(news[index].url);
+                                                }
+                                              }else{
+                                                col[index] = Colors.grey;FavList.title
+                                                    .remove(news[index].title);
+                                                FavList.description
+                                                    .remove(news[index].description);
+                                                FavList.author
+                                                    .remove(news[index].author);
+                                                FavList.publishedAt
+                                                    .remove(news[index].publishedAt);
+                                                FavList.content
+                                                    .remove(news[index].content);
+                                                FavList.urlToImage
+                                                    .remove(news[index].urlToImage);
+                                                FavList.url.remove(news[index].url);
+                                              }
+                                            });
+                                          }),
+                                    ),
+                                    Padding(
+                                      padding:
+                                      const EdgeInsets.fromLTRB(135, 20, 10, 20),
+                                      child: IconButton(
                                         iconSize: 25,
-                                        icon: Icon(Icons.favorite),
+                                        icon: Icon(Icons.cancel),
                                         color: col[index],
                                         onPressed: () {
-                                          setState(() {
-                                            if(col[index] == Colors.grey){
-                                              col[index] = Colors.red;if (FavList.title.contains(
-                                                  news[index].title) ==
-                                              false) {
-                                            FavList.title
-                                                .add(news[index].title);
-                                            FavList.description
-                                                .add(news[index].description);
-                                            FavList.author
-                                                .add(news[index].author);
-                                            FavList.publishedAt
-                                                .add(news[index].publishedAt);
-                                            FavList.content
-                                                .add(news[index].content);
-                                            FavList.urlToImage
-                                                .add(news[index].urlToImage);
-                                            FavList.url.add(news[index].url);
-                                          }
-                                            }else{
-                                              col[index] = Colors.grey;FavList.title
-                                              .remove(news[index].title);
-                                          FavList.description
-                                              .remove(news[index].description);
-                                          FavList.author
-                                              .remove(news[index].author);
-                                          FavList.publishedAt
-                                              .remove(news[index].publishedAt);
-                                          FavList.content
-                                              .remove(news[index].content);
-                                          FavList.urlToImage
-                                              .remove(news[index].urlToImage);
-                                          FavList.url.remove(news[index].url);
-                                            }
-                                          });
-                                        }),
-                                    IconButton(
-                                      iconSize: 25,
-                                        icon: Icon(Icons.cancel),
-                                      color: col[index],
-                                      onPressed: () {
-                                        ScreenArguments arg = ScreenArguments(news[index].title);
-                                        Navigator.pushNamed(context, FakenewsScreen.routeName, arguments: arg);
-                                      },
-                                    )
+                                          ScreenArguments arg = ScreenArguments(news[index].title);
+                                          Navigator.pushNamed(context, FakenewsScreen.routeName, arguments: arg);
+                                        },
+                                      )
+                                    ),
+
                                   ],
                                 )
                               ],
