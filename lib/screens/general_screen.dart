@@ -1,9 +1,12 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
+import '../models/screen_arguments_model.dart';
 import '../repository/news_api.dart';
 import '../view_model/article_view_model.dart';
 import '../view_model/articles_view_model.dart';
+import '../screens/fakenews_screen.dart';
 import 'article_details_screen.dart';
 
 import '../models/fav_list.dart';
@@ -110,15 +113,16 @@ class _GeneralScreenState extends State<GeneralScreen> {
                                     ),
                                   ),
                                 ),
-                                IconButton(
-                                    iconSize: 25,
-                                    icon: const Icon(Icons.favorite),
-                                    color: col[index],
-                                    onPressed: () {
-                                      setState(() {
-                                        if (col[index] == Colors.grey) {
-                                          col[index] = Colors.red;
-                                          if (FavList.title.contains(
+                                Row(
+                                  children: [
+                                    IconButton(
+                                        iconSize: 25,
+                                        icon: Icon(Icons.favorite),
+                                        color: col[index],
+                                        onPressed: () {
+                                          setState(() {
+                                            if(col[index] == Colors.grey){
+                                              col[index] = Colors.red;if (FavList.title.contains(
                                                   news[index].title) ==
                                               false) {
                                             FavList.title
@@ -135,9 +139,8 @@ class _GeneralScreenState extends State<GeneralScreen> {
                                                 .add(news[index].urlToImage);
                                             FavList.url.add(news[index].url);
                                           }
-                                        } else {
-                                          col[index] = Colors.grey;
-                                          FavList.title
+                                            }else{
+                                              col[index] = Colors.grey;FavList.title
                                               .remove(news[index].title);
                                           FavList.description
                                               .remove(news[index].description);
@@ -150,9 +153,20 @@ class _GeneralScreenState extends State<GeneralScreen> {
                                           FavList.urlToImage
                                               .remove(news[index].urlToImage);
                                           FavList.url.remove(news[index].url);
-                                        }
-                                      });
-                                    })
+                                            }
+                                          });
+                                        }),
+                                    IconButton(
+                                      iconSize: 25,
+                                        icon: Icon(Icons.cancel),
+                                      color: col[index],
+                                      onPressed: () {
+                                        ScreenArguments arg = ScreenArguments(news[index].title);
+                                        Navigator.pushNamed(context, FakenewsScreen.routeName, arguments: arg);
+                                      },
+                                    )
+                                  ],
+                                )
                               ],
                             ),
                           ),

@@ -1,7 +1,7 @@
-// ignore_for_file: prefer_interpolation_to_compose_strings, unused_local_variable, avoid_print
-
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
+import '../models/screen_arguments_model.dart';
 import '../widgets/bottom_navbar.dart';
 
 class FakenewsScreen extends StatelessWidget {
@@ -10,6 +10,7 @@ class FakenewsScreen extends StatelessWidget {
   final headlineController = TextEditingController();
 
   static const routeName = "/fakenews";
+
 
   Future<void> sendFakeNews(headline, discription) async {
     final Email sendEmail = Email(
@@ -35,6 +36,7 @@ class FakenewsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final args = ModalRoute.of(context)!.settings.arguments as ScreenArguments;
     return Scaffold(
       appBar: AppBar(
         shadowColor: Colors.transparent,
@@ -59,7 +61,8 @@ class FakenewsScreen extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                 child: TextFormField(
-                  controller: headlineController,
+                  controller: TextEditingController(text: args.title),
+                  //initialValue: args.title,
                   decoration: const InputDecoration(
                     labelText: 'Article heading',
                     hintText: 'Name the article title',

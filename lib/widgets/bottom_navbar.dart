@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../models/screen_arguments_model.dart';
 import '../screens/news_screen.dart';
 import '../screens/fakenews_screen.dart';
 import '../screens/favorites_screen.dart';
@@ -29,7 +30,8 @@ class BottomNavBar extends StatelessWidget {
         BottomNavigationBarItem(
             icon: IconButton(
               onPressed: () {
-                Navigator.pushNamed(context, FakenewsScreen.routeName);
+                ScreenArguments arg = ScreenArguments('');
+                Navigator.pushNamed(context, FakenewsScreen.routeName,arguments: arg);
               },
               icon: const Icon(Icons.cancel),
             ),
