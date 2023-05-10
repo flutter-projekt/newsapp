@@ -166,7 +166,7 @@ class _GeneralScreenState extends State<GeneralScreen> {
                                       child: IconButton(
                                         iconSize: 25,
                                         icon: Icon(Icons.cancel),
-                                        color: col[index],
+                                        color: Colors.grey,
                                         onPressed: () {
                                           ScreenArguments arg = ScreenArguments(news[index].title);
                                           Navigator.pushNamed(context, FakenewsScreen.routeName, arguments: arg);
